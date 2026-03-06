@@ -21,23 +21,6 @@ cd server && npm install && npm run dev
 
 Then run the frontend with `npm run dev` (from the project root). The app proxies `/api` and `/uploads` to the server (port 3000). You can upload and delete photos on the Photography page; images are stored in `server/uploads/photos/` and metadata in `server/photos.db`.
 
-## Git
-
-To turn this into a git repo (requires [Git](https://git-scm.com/) installed):
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: retro personal site with photography gallery"
-```
-
-Remote (e.g. GitHub): add the remote and push:
-
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/retro-personal-site.git
-git branch -M main
-git push -u origin main
-```
 
 ## Build for production
 
@@ -46,11 +29,11 @@ npm run build
 npm run preview
 ```
 
-## What's inside
 
-- **Home** – Welcome and “under construction” vibe
-- **About Me** – Short bio and skills
-- **Links** – Cool links section (edit `src/pages/Links.jsx`)
-- **Guestbook** – Sign and read messages (state resets on refresh)
+## Upload to photography page
 
-Edit `src/App.jsx`, `src/pages/*.jsx`, and `src/index.css` to make it your own. Have fun! ✨
+```
+curl -X POST http://{url-base}:3000/api/photos \
+  -F "photo=@/absolute/path/to/your-image.jpg" \
+  -F "alt=alt-text"
+```
