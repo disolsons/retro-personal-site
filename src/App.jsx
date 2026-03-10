@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Links from './pages/Links'
 import Guestbook from './pages/Guestbook'
+import VisitorCounter from './components/VisitorCounter';
 
 const PAGES = {
   home: 'home',
@@ -47,6 +48,8 @@ export default function App() {
     }
   }
 
+  const count = VisitorCounter();
+
   return (
     <>
       <Marquee text="★ WELCOME TO SOWNY'S AFTERHOURS! -- FEEL FREE TO WRITE SOMETHING ON THE GUESTBOOK! ★"/>
@@ -61,10 +64,12 @@ export default function App() {
           {renderPage()}
         </main>
         <footer className="footer">
-          <span className="visitor-count">VISITORS: UNKNOWN - I still haven't added a counter!</span>
+          <span className="visitor-count">TOTAL VISITORS: {count ?? '...'}</span>
           <span className="copyright">Made with 💜 and React</span>
         </footer>
       </div>
     </>
   )
 }
+
+
