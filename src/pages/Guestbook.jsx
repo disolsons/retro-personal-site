@@ -12,7 +12,7 @@ export default function Guestbook() {
 
     // Listen for real-time updates
     useEffect(() => {
-      const q = query(collection(db, "guestbook"), orderBy("date", "desc"))
+      const q = query(collection(db, "guestbook"), orderBy("date", "asc"))
       const unsubscribe = onSnapshot(q, (snapshot) => {
         const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
         setEntries(data)
