@@ -11,16 +11,6 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Photography gallery (upload)
-
-The gallery uses a small Node API with SQLite. Run it in a **second terminal**:
-
-```bash
-cd server && npm install && npm run dev
-```
-
-Then run the frontend with `npm run dev` (from the project root). The app proxies `/api` and `/uploads` to the server (port 3000). You can upload and delete photos on the Photography page; images are stored in `server/uploads/photos/` and metadata in `server/photos.db`.
-
 
 ## Build for production
 
