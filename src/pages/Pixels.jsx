@@ -6,6 +6,10 @@ export default function Pixels() {
         dataUrl: "../../Build/UnityProjects.data.br",
         frameworkUrl: "../../Build/UnityProjects.framework.js.br",
         codeUrl: "../../Build/UnityProjects.wasm.br",
+        webglContextAttributes: {
+            preserveDrawingBuffer: true,
+            alpha: true, 
+          },
       });
     return (
       <>
